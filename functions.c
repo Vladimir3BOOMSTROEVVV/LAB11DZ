@@ -4,22 +4,22 @@
 
 Train input_train() {
     Train t;
-    printf("Íîìåð ïîåçäà: ");
+    printf("ÐÐ¾Ð¼ÐµÑ€ Ð¿Ð¾ÐµÐ·Ð´Ð°: ");
     scanf("%d", &t.num);
-    printf("Ïóíêò îòáûòèÿ: ");
+    printf("ÐŸÑƒÐ½ÐºÑ‚ Ð¾Ñ‚Ð±Ñ‹Ñ‚Ð¸Ñ: ");
     scanf("%s", t.punkt_otb);
-    printf("Âðåìÿ îòáûòèÿ (÷àñû ìèíóòû): ");
+    printf("Ð’Ñ€ÐµÐ¼Ñ Ð¾Ñ‚Ð±Ñ‹Ñ‚Ð¸Ñ (Ñ‡Ð°ÑÑ‹ Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹): ");
     scanf("%d %d", &t.h_otb, &t.m_otb);
-    printf("Ïóíêò ïðèáûòèÿ: ");
+    printf("ÐŸÑƒÐ½ÐºÑ‚ Ð¿Ñ€Ð¸Ð±Ñ‹Ñ‚Ð¸Ñ: ");
     scanf("%s", t.punkt_prib);
-    printf("Âðåìÿ ïðèáûòèÿ (÷àñû ìèíóòû): ");
+    printf("Ð’Ñ€ÐµÐ¼Ñ Ð¿Ñ€Ð¸Ð±Ñ‹Ñ‚Ð¸Ñ (Ñ‡Ð°ÑÑ‹ Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹): ");
     scanf("%d %d", &t.h_prib, &t.m_prib);
     printf("\n");
     return t;
 }
 
 void print_train(Train t) {
-    printf("Ïîåçä %d: %s (%d:%d) -> %s (%d:%d)\n", t.num, t.punkt_otb, t.h_otb, t.m_otb, t.punkt_prib, t.h_prib, t.m_prib);
+    printf("ÐŸÐ¾ÐµÐ·Ð´ %d: %s (%d:%d) -> %s (%d:%d)\n", t.num, t.punkt_otb, t.h_otb, t.m_otb, t.punkt_prib, t.h_prib, t.m_prib);
 }
 
 int check(Train t) {
@@ -41,17 +41,17 @@ int writefile(char* fname, Train t1, Train t2, Train t3) {
     FILE* f;
     f = fopen(fname, "wt");
     if (f == NULL) {
-        printf("Îøèáêà îòêðûòèÿ ôàéëà äëÿ çàïèñè\n");
+        printf("ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸\n");
         return 0;
     }
     if (check(t1) == 1) {
-        fprintf(f, "Ïîåçä %d: %s (%d:%d) -> %s (%d:%d)\n", t1.num, t1.punkt_otb, t1.h_otb, t1.m_otb, t1.punkt_prib, t1.h_prib, t1.m_prib);
+        fprintf(f, "ÐŸÐ¾ÐµÐ·Ð´ %d: %s (%d:%d) -> %s (%d:%d)\n", t1.num, t1.punkt_otb, t1.h_otb, t1.m_otb, t1.punkt_prib, t1.h_prib, t1.m_prib);
     }
     if (check(t2) == 1) {
-        fprintf(f, "Ïîåçä %d: %s (%d:%d) -> %s (%d:%d)\n",t2.num, t2.punkt_otb, t2.h_otb, t2.m_otb, t2.punkt_prib, t2.h_prib, t2.m_prib);
+        fprintf(f, "ÐŸÐ¾ÐµÐ·Ð´ %d: %s (%d:%d) -> %s (%d:%d)\n",t2.num, t2.punkt_otb, t2.h_otb, t2.m_otb, t2.punkt_prib, t2.h_prib, t2.m_prib);
     }
     if (check(t3) == 1) {
-        fprintf(f, "Ïîåçä %d: %s (%d:%d) -> %s (%d:%d)\n",t3.num, t3.punkt_otb, t3.h_otb, t3.m_otb, t3.punkt_prib, t3.h_prib, t3.m_prib);
+        fprintf(f, "ÐŸÐ¾ÐµÐ·Ð´ %d: %s (%d:%d) -> %s (%d:%d)\n",t3.num, t3.punkt_otb, t3.h_otb, t3.m_otb, t3.punkt_prib, t3.h_prib, t3.m_prib);
     }
 
     fclose(f);
